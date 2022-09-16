@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+<script type="text/javascript">
+
+function initViz() {
+
+var containerDiv = document.getElementById("vizContainer"),
+url = "http://public.tableau.com/views/300_16633065637740/300-",
+options = {
+
+hideTabs: true,
+onFirstInteractive: function () {
+
+console.log("Run this code when the viz has finished loading.");
+}
+};
+// Create a viz object and embed it in the container div.
+var viz = new tableau.Viz(containerDiv, url, options);
+}
+
+
+</script>
+</head>
+
+
+<body onload="initViz();">
+<header>
+<h1>沪深300价格</h1>
+</header>
+<div class="flex">
+
+<div class="contents">
+<h1>实时价格</h1>
+<div id="vizContainer" style="width:800px; height:600px;"></div>
+</div>
+</div>
+
+<style>
+header{
+
+background-color:#ee6664;
+text-align:center;
+padding:10px 0px;
+}
+header h1{
+
+margin:0px;
+font-size:26px;
+color:#414141;
+font-weight:1000;
+font-family: 'Acme', sans-serif;
+}
+h1 span{
+
+font-weight:400;
+}
+body{
+
+font-family: "Open Sans", arial;
+color:#fff;
+background: #666c82;
+margin:0;
+}
+.flex{
+
+display:flex;
+}
+
+
+.contents{
+
+background-color:#3E414F;
+padding:15px 100px;
+width:75%;
+margin:15px 3%;
+box-shadow:4px 4px 4px #3C3F35;
+border-radius:5px;
+}
+.contents h3{
+
+border-bottom: 1px solid grey;
+padding-bottom:10px;
+font-family: 'Shadows Into Light', cursive;
+margin-bottom: 20px
+}
+.contents p{
+
+text-align:justify;
+margin-bottom:50px;
+line-height:2;
+}
+
+</style>
+</body>
+
+
+
+
+
+
+</html>
+
