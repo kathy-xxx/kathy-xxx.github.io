@@ -37,6 +37,8 @@
       const HEIGHT = 80;
       const WIDTH = 1200;
       const PAD = 8;
+      const BARSPACING = 0.5;
+      const RIGHTOFFSET = 100;
       function createPriceChart() {
         return LightweightCharts.createChart(
           document.getElementById("container"),
@@ -77,6 +79,8 @@
             timeScale: {
               borderColor: "rgba(197, 203, 206, 1)",
               visible: false,
+              barSpacing: BARSPACING,
+              rightOffset: RIGHTOFFSET,
             },
             localization: {
               priceFormatter: (price) =>
@@ -126,6 +130,8 @@
             timeScale: {
               borderColor: "rgba(197, 203, 206, 1)",
               visible: false,
+              barSpacing: BARSPACING,
+              rightOffset: RIGHTOFFSET,
             },
             localization: {
               priceFormatter: (price) =>
@@ -178,6 +184,8 @@
             timeScale: {
               borderColor: "rgba(197, 203, 206, 1)",
               visible: true,
+              barSpacing: BARSPACING,
+              rightOffset: RIGHTOFFSET,
             },
             localization: {
               priceFormatter: (price) =>
@@ -219,6 +227,7 @@
       syncCharts();
 
       const priceData = getPriceData();
+      const candleStickData = getCandleStickData();
       const bsadf1Data = getBsadf1Data();
       const rho1Data = getRho1Data();
       const bsadfSignData = getBsadfSignData();
@@ -264,11 +273,10 @@
         return series;
       }
 
-      const priceSeries = charts[0].addLineSeries({
+      const candleStickSeries = charts[0].addCandlestickSeries({
         //priceScaleId: "left",
         lastValueVisible: false,
         priceLineVisible: false,
-        lineWidth: 1,
         crosshairMarkerVisible: true,
         crosshairMarkerRadius: 2,
       });
@@ -303,7 +311,7 @@
           text: "Buy",
         },
       ];
-      priceSeries.setMarkers(markers);
+      //candleStickSeries.setMarkers(markers);
 
       const bsadf1Series = createBsadfSeries(1);
       const rho1Series = createRhoSeries(1);
@@ -325,7 +333,7 @@
         crosshairMarkerRadius: 2,
       });
 
-      priceSeries.setData(priceData);
+      candleStickSeries.setData(candleStickData);
       bsadf1Series.setData(bsadf1Data);
       rho1Series.setData(rho1Data);
       bsadfSignSeries.setData(bsadfSignData);
