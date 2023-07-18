@@ -86,6 +86,14 @@
               priceFormatter: (price) =>
                 pad(Array(15).join(" "), price.toFixed(2), false),
             },
+            handleScroll: {
+              mouseWheel: true,
+              pressedMouseMove: true,
+            },
+            handleScale: {
+              mouseWheel: true,
+              pinch: true,
+            },
           }
         );
       }
@@ -136,6 +144,14 @@
             localization: {
               priceFormatter: (price) =>
                 pad(Array(PAD).join(" "), price.toFixed(2), false),
+            },
+            handleScroll: {
+              mouseWheel: true,
+              pressedMouseMove: true,
+            },
+            handleScale: {
+              mouseWheel: true,
+              pinch: true,
             },
           }
         );
@@ -194,6 +210,14 @@
                   (price / 1000000).toFixed(2) + "M",
                   false
                 ),
+            },
+            handleScroll: {
+              mouseWheel: true,
+              pressedMouseMove: true,
+            },
+            handleScale: {
+              mouseWheel: true,
+              pinch: true,
             },
           }
         );
